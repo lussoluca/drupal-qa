@@ -1,0 +1,50 @@
+grumphp:
+  parallel:
+    enabled: true
+    max_workers: 32
+  fixer:
+    enabled: true
+    fix_by_default: true
+  tasks:
+    git_blacklist:
+      keywords:
+        - '(var_|)dump\(.*\);*'
+        - 'die(;|\(.*\));*'
+        - 'dpm\(.*\);*'
+        - 'print_r\(.*\);*'
+      triggered_by: ['php','module','inc']
+    phpcs:
+      standard: phpcs.xml
+      triggered_by: ['php','module','inc']
+    phpmd:
+      whitelist_patterns: [ ]
+      exclude: [ ]
+      report_format: text
+      ruleset: ['cleancode', 'codesize', 'naming']
+      triggered_by: ['php','module','inc']
+    phpstan:
+      autoload_file: ~
+      configuration: ~
+      level: 5
+      force_patterns: []
+      ignore_patterns: []
+      triggered_by: ['php','module','inc']
+      memory_limit: "-1"
+      use_grumphp_paths: true
+    twigcs:
+      path: '.'
+      severity: 'warning'
+      display: 'all'
+      ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'
+      triggered_by: [ 'twig' ]
+      exclude: [ ]
+    git_commit_message:
+      allow_empty_message: false
+      enforce_capitalized_subject: true
+      enforce_no_subject_punctuations: false
+      enforce_no_subject_trailing_period: true
+      enforce_single_lined_subject: true
+      matchers:
+        Must be in correct format: /^(refs)[\ ].*\#[0-9]+\:[\ ]/
+      case_insensitive: true
+      multiline: true
