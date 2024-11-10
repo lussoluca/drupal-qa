@@ -1,5 +1,5 @@
 {
-    "name": "sparkfabrik/drupal-qa",
+    "name": "lussoluca/drupal-qa",
     "description": "Run the QA checks for a Drupal project",
     "readme": "README.md",
     "require-dev": {
