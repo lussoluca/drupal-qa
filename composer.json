@@ -1,6 +1,7 @@
 {
     "name": "lussoluca/drupal-qa",
     "description": "Run the QA checks for a Drupal project",
+    "type": "library",
     "readme": "README.md",
     "require-dev": {
         "friendsoftwig/twigcs": ">=4",
