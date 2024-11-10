@@ -3,7 +3,7 @@
     "description": "Run the QA checks for a Drupal project",
     "type": "library",
     "readme": "README.md",
-    "require-dev": {
+    "require": {
         "friendsoftwig/twigcs": ">=4",
         "phpmd/phpmd": "^2.15",
         "phpro/grumphp": "^2.9",
