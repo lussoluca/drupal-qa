@@ -8,13 +8,13 @@ grumphp:
   tasks:
     git_blacklist:
       keywords:
-        - '(var_|)dump\(.*\);*'
+        - 'var_dump\(.*\);*'
         - 'die(;|\(.*\));*'
         - 'dpm\(.*\);*'
         - 'print_r\(.*\);*'
       triggered_by: ['php','module','inc']
     phpcs:
-      standard: phpcs.xml
+      standard: vendor/lussoluca/drupal-qa/phpcs.xml
       triggered_by: ['php','module','inc']
     phpmd:
       whitelist_patterns: [ ]
