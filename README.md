@@ -32,3 +32,15 @@ Some configurations can be overridden in the local `grumphp.yml` file:
 
 * convention.phpstan.configuration
 * convention.phpstan.level
+
+# Run outside of a commit
+
+To run the tool before creating a commit, add those lines to `Makefile.project`:
+
+```make
+.PHONY: grumphp
+grumphp:
+  docker run --rm \
+    -v ${PWD}:/app -w /app \
+    ghcr.io/sparkfabrik/drupal-qa:2.5.0 sh -c "cd src/drupal && php bin/grumphp git:pre-commit"
+```
