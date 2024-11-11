@@ -16,6 +16,10 @@ grumphp:
         - 'dpm\(.*\);*'
         - 'print_r\(.*\);*'
       triggered_by: ['php','module','inc','install','theme']
+    composer:
+      no_check_lock: true
+    yamllint: ~
+    phplint: ~
     phpcs:
       standard: vendor/lussoluca/drupal-qa/phpcs.xml
       triggered_by: ['php','module','inc','install','theme']
