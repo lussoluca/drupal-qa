@@ -15,7 +15,7 @@ Install the package:
 composer require lussoluca/drupal-qa:dev-main
 ```
 
-When asked for `Do you want to create a grumphp.yml file?` answer `No`.
+When asked for `Do you want to create a grumphp.yml file?`, answer `No`.
 
 Add a `grumphp.yml` file to `src/drupal` with those lines:
 
@@ -23,8 +23,6 @@ Add a `grumphp.yml` file to `src/drupal` with those lines:
 imports:
   - { resource: vendor/lussoluca/drupal-qa/grumphp.yml }
 ```
-
-Try to commit something and see GrumPHP runs the configured tools.
 
 # Override
 
@@ -40,7 +38,21 @@ To run the tool before creating a commit, add those lines to `Makefile.project`:
 ```make
 .PHONY: grumphp
 grumphp:
-  docker run --rm \
+  docker run --rm -it \
     -v ${PWD}:/app -w /app \
     ghcr.io/sparkfabrik/drupal-qa:2.5.0 sh -c "cd src/drupal && php bin/grumphp git:pre-commit"
 ```
+
+Run `make grumphp` to start the tool.
+
+# Run for all commits
+
+Run this command:
+
+```shell
+docker run --rm -it -v ${PWD}:/app -w /app ghcr.io/sparkfabrik/drupal-qa:2.5.0 sh -c "cd src/drupal && php bin/grumphp git:init"
+```
+
+This will update the `pre-commit` and `commit-msg` GIT hooks to run GrumPHP.
+
+Now try to commit something and see GrumPHP runs the configured tools.
