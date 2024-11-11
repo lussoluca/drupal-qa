@@ -40,7 +40,7 @@ To run the tool before creating a commit, add those lines to `Makefile.project`:
 grumphp:
   docker run --rm -it \
     -v ${PWD}:/app -w /app \
-    ghcr.io/sparkfabrik/drupal-qa:2.5.0 sh -c "cd src/drupal && php bin/grumphp git:pre-commit"
+    ghcr.io/sparkfabrik/drupal-qa:2.5.0 sh -c "cd src/drupal && git diff | php bin/grumphp git:pre-commit"
 ```
 
 Run `make grumphp` to start the tool.

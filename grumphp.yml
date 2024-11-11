@@ -27,7 +27,7 @@ grumphp:
       whitelist_patterns: []
       exclude: []
       report_format: text
-      ruleset: ['cleancode', 'codesize', 'naming']
+      ruleset: ['vendor/lussoluca/drupal-qa/phpmd.xml']
       triggered_by: ['php','module','inc','install','theme']
     phpstan:
       autoload_file: ~
@@ -39,7 +39,6 @@ grumphp:
       memory_limit: "-1"
       use_grumphp_paths: true
     twigcs:
-      path: '.'
       severity: 'warning'
       display: 'all'
       ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'

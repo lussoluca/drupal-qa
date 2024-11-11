@@ -1,0 +1,11 @@
+parameters:
+  bootstrapFiles:
+    - ../../../vendor/autoload.php
+  customRulesetUsed: true
+  reportUnmatchedIgnoredErrors: false
+  ignoreErrors:
+    - '#\Drupal calls should be avoided in classes, use dependency injection instead#'
+  drupal:
+    drupal_root: web
+  parallel:
+    processTimeout: 300.0
