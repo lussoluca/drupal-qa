@@ -45,6 +45,9 @@ grumphp:
 
 Run `make grumphp` to start the tool.
 
+*Disclaimer*: Docker image `ghcr.io/sparkfabrik/drupal-qa` is used here just because it contains both PHP and GIT executables;
+any images with those tools will be OK. We should use an image that has the same PHP version of the project.
+
 # Run for all commits
 
 Run this command:
@@ -56,3 +59,6 @@ docker run --rm -it -v ${PWD}:/app -w /app ghcr.io/sparkfabrik/drupal-qa:2.5.0 s
 This will update the `pre-commit` and `commit-msg` GIT hooks to run GrumPHP.
 
 Now try to commit something and see GrumPHP runs the configured tools.
+
+*Disclaimer*: Docker image `ghcr.io/sparkfabrik/drupal-qa` is used here just because it contains both PHP and GIT executables;
+any images with those tools will be OK. We should use an image that has the same PHP version of the project.
